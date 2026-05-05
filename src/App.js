@@ -89,6 +89,11 @@ export default function App() {
               </div>
             </button>
           </div>
+          <div style={{ textAlign: "center", marginTop: 20 }}>
+            <small style={{ color: "var(--muted)", fontSize: 12 }}>
+              Prototype — this is an early prototype and will be updated further.
+            </small>
+          </div>
         </div>
       )}
 
