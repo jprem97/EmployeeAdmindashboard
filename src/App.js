@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import TeamMember from "./screen/TeamMember";
-import List from "./screen/List";
+import List from "./screen/List.js";
 import Register from "./screen/Register";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -9,7 +9,7 @@ import MemberList from "./components/MemberList";
 import TaskList from "./components/TaskList";
 import { updateMemberTask, resetMembers } from "./features/membersSlice";
 import { resetTasks } from "./features/tasksSlice";
-import { Users, User, RefreshCw, LayoutDashboard } from "lucide-react";
+import { Users, User, RefreshCw } from "lucide-react";
 import "./App.css";
 
 export default function App() {
@@ -40,7 +40,7 @@ export default function App() {
 
   const resetMember = () => setMemberId("");
 
-  const visibleStatus = showBreak ? members.filter((m) => m.status === "break") : members;
+//   const visibleStatus = showBreak ? members.filter((m) => m.status === "break") : members;
 
   return (
     <div className="min-h-screen text-slate-800 font-sans selection:bg-indigo-100 selection:text-indigo-900">
