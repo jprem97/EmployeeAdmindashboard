@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import tasksReducer from "../features/tasksSlice";
-import statusReducer from "../features/statusSlice";
+import membersReducer from "../features/membersSlice";
 
 export default configureStore({
   reducer: {
     tasks: tasksReducer,
-    members: statusReducer
+    members: membersReducer
   }
 });

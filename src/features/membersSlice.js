@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialMembers = [
-  { id: 1, status: "working", task: "some work" },
-  { id: 2, status: "working", task: "some work" },
-  { id: 3, status: "break", task: "some work" },
-  { id: 4, status: "break", task: "some work" },
-  { id: 5, status: "working", task: "some work" }
+  { id: 101, name: "Asha Patel", status: "working" },
+  { id: 102, name: "Daniel Kim", status: "working" },
+  { id: 103, name: "Maria Lopez", status: "break" },
+  { id: 104, name: "Omar Ali", status: "working" },
+  { id: 105, name: "Lina Chen", status: "offline" }
 ];
 
-const slice = createSlice({
+const membersSlice = createSlice({
   name: "members",
   initialState: initialMembers,
   reducers: {
@@ -22,11 +22,17 @@ const slice = createSlice({
       const m = state.find(x => x.id === id);
       if (m) m.task = task;
     },
+    addMember(state, action) {
+      state.push(action.payload);
+    },
     resetMembers() {
       return initialMembers;
+    },
+    setMembers(state, action) {
+      return action.payload;
     }
   }
 });
 
-export const { setMemberStatus, updateMemberTask, resetMembers } = slice.actions;
-export default slice.reducer;
+export const { setMemberStatus, updateMemberTask, addMember, resetMembers, setMembers } = membersSlice.actions;
+export default membersSlice.reducer;

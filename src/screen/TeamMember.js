@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { updateTaskProgress } from "../features/tasksSlice";
-import { setMemberStatus } from "../features/statusSlice";
+import { setMemberStatus } from "../features/membersSlice";
 import "./TeamMember.css";
 
 export default function TeamMember({
@@ -13,7 +13,7 @@ export default function TeamMember({
 }) {
   const dispatch = useDispatch();
 
-  const statuses = ["Working", "Break", "Meeting", "Offline"];
+  const statuses = ["working", "break", "meeting", "offline"];
 
   const changeStatus = (newStatus) => {
     setGlobalStatus(newStatus);
@@ -50,7 +50,7 @@ export default function TeamMember({
               className={`tm-status-btn ${globalStatus === s ? "tm-active" : ""}`}
               onClick={() => changeStatus(s)}
             >
-              {s}
+              {s.charAt(0).toUpperCase() + s.slice(1)}
             </button>
           ))}
         </div>
